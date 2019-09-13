@@ -4,6 +4,8 @@
 
 ### Overview
 
+This program simulates a cash transaction. 
+
 ### How to run
 
 ### Technologies
