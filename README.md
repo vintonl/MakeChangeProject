@@ -1,13 +1,19 @@
 ## Make Change Project
 
-### First week homework for Skill Distillery
+### First project after week-one  at Skill Distillery .
 
-### Overview
+### Overview:
 
-This program simulates a cash transaction. 
+This program simulates a cash transaction to return the correct change for a cash purchase using US Dollors.  
 
-### How to run
+### How to run:
 
-### Technologies
+This program is designed to run a Java method. The user will input the total amount of the transaction and the amount tendered by the customer.  The program returns a message communicating the amount of change to  return  to the customer by the proper increments to return the fewest number of bills or coins.  
 
-### Lessons learned
+### Technologies:
+
+This program was written using Java.
+
+### Lessons learned:
+
+I learned how to overcome working with a double by casting a rounded double to an integer and changing the decimal point.  
