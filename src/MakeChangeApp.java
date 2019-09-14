@@ -10,7 +10,7 @@ public class MakeChangeApp {
 
 		System.out.println("Welcome to MakeChange!");
 		String quit;
-		do {
+//		do {
 			System.out.print("Please enter the total amount of the transaction: ");
 			double price = kb.nextDouble();
 			System.out.print("Enter how much money was tendered by the customer: ");
@@ -20,7 +20,7 @@ public class MakeChangeApp {
 				System.out.println("Error: Not enough cash to pay for this transaction.");
 			} else if (price == cashIn) {
 				System.out.println("This is the exact amount of cash to pay for this transaction.");
-			}
+			} 
 
 			double cashOut = cashIn - price;
 			int cashOutInt = (int) (Math.round(cashOut * 100));
@@ -60,18 +60,18 @@ public class MakeChangeApp {
 				cashOutInt = cashOutInt - 5 * nicklesCash;
 			}
 			if (cashOutInt > 1) {
-				pennyStr = "and " + cashOutInt + " pennies. ";
+				pennyStr = cashOutInt + " pennies. ";
 			} else if (cashOutInt == 1) {
-				pennyStr = "and 1 penny. ";
+				pennyStr = "1 penny. ";
 			}
 
-			System.out.println("The correct change is: " + twentyStr + tenStr + fiveStr + onesStr + quarterStr + dimeStr
+			System.out.println(twentyStr + tenStr + fiveStr + onesStr + quarterStr + dimeStr
 					+ nickleStr + pennyStr);
-			System.out.print("Enter QUIT to exit or anything else to MakeChange again: ");
-			quit = kb.next();
-		} while (!quit.equals("quit"));
+//			System.out.print("Enter QUIT to exit or anything else to MakeChange again: ");
+//			quit = kb.next().toLowerCase();
+//		} while (!quit.equals("quit"));
 
-		System.out.println("Thank you for using MakeChange. Have a great one!");
+//		System.out.println("Thank you for using MakeChange. Have a great one!");
 		kb.close();
 	}
 
