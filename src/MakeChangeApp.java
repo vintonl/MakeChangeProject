@@ -9,8 +9,7 @@ public class MakeChangeApp {
 				pennyStr = "";
 
 		System.out.println("Welcome to MakeChange!");
-//		String quit;
-//		do {
+
 		System.out.print("Please enter the total amount of the transaction: ");
 		double price = kb.nextDouble();
 		System.out.print("Enter how much money was tendered by the customer: ");
@@ -27,7 +26,7 @@ public class MakeChangeApp {
 		if (cashOutInt >= 2000) {
 			int twentyCash = (int) (Math.floor(cashOutInt / 2000));
 			if (twentyCash > 1) {
-				twentyStr = twentyCash + " twenty dollar bills, ";	
+				twentyStr = twentyCash + " twenty dollar bills, ";
 			} else {
 				twentyStr = twentyCash + " twenty dollar bill, ";
 			}
@@ -48,7 +47,7 @@ public class MakeChangeApp {
 			if (onesCash > 1) {
 				onesStr = onesCash + " one dollar bills, ";
 			} else {
-				onesStr = onesCash + " one dollar bill, ";	
+				onesStr = onesCash + " one dollar bill, ";
 			}
 			cashOutInt = cashOutInt - 100 * onesCash;
 		}
@@ -64,7 +63,7 @@ public class MakeChangeApp {
 		if (cashOutInt >= 10) {
 			int dimesCash = (int) (Math.floor(cashOutInt / 10));
 			if (dimesCash > 1) {
-				dimeStr = dimesCash + " dimes, ";	
+				dimeStr = dimesCash + " dimes, ";
 			} else {
 				dimeStr = dimesCash + " dime, ";
 			}
@@ -82,11 +81,7 @@ public class MakeChangeApp {
 		}
 
 		System.out.println(twentyStr + tenStr + fiveStr + onesStr + quarterStr + dimeStr + nickleStr + pennyStr);
-//			System.out.print("Enter QUIT to exit or anything else to MakeChange again: ");
-//			quit = kb.next().toLowerCase();
-//		} while (!quit.equals("quit"));
 
-//		System.out.println("Thank you for using MakeChange. Have a great one!");
 		kb.close();
 	}
 

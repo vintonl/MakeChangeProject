@@ -12,7 +12,7 @@ This program is designed to run as a Java method. The user will input the total 
 
 ### Technologies:
 
-This program was written using Java.
+This program was written in Java using Eclipse. Additionally, I used Git and Github to post and share this program.
 
 ### Lessons learned:
 
