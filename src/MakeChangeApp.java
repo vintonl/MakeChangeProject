@@ -7,7 +7,8 @@ public class MakeChangeApp {
 		Scanner kb = new Scanner(System.in);
 		String twentyStr = "", tenStr = "", fiveStr = "", onesStr = "", quarterStr = "", dimeStr = "", nickleStr = "", pennyStr = "";
 		
-		System.out.print("Please enter the total of the transaction: ");
+		System.out.println("Welcome to MakeChange!");
+		System.out.print("Please enter the total amount of the transaction: ");
 		double price = kb.nextDouble();
 		System.out.print("Enter how much money was tendered by the customer: ");
 		double cashIn = kb.nextDouble();
@@ -64,8 +65,10 @@ public class MakeChangeApp {
 			pennyStr = "and 1 penny. ";
 		}
 		
-		System.out.println(twentyStr + tenStr + fiveStr + onesStr + quarterStr + dimeStr + nickleStr + pennyStr);
 		
+		System.out.println("The correct change is: " + twentyStr + tenStr + fiveStr + onesStr + quarterStr + dimeStr + nickleStr + pennyStr);
+		
+		System.out.println("Thank you for using MakeChange. Have a great one!");
 		kb.close();
 	}
 
