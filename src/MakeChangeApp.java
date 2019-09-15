@@ -5,24 +5,41 @@ public class MakeChangeApp {
 
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
-		String twentyStr = "", tenStr = "", fiveStr = "", onesStr = "", quarterStr = "", dimeStr = "", nickleStr = "",
-				pennyStr = "";
+		double cashOut;
+		int cashOutInt;
+		String quit = "";
 
 		System.out.println("Welcome to MakeChange!");
 
-		System.out.print("Please enter the total amount of the transaction: ");
-		double price = kb.nextDouble();
-		System.out.print("Enter how much money was tendered by the customer: ");
-		double cashIn = kb.nextDouble();
+		do {
+			System.out.print("Please enter the total amount of the transaction: ");
+			double price = kb.nextDouble();
+			System.out.print("Enter how much money was tendered by the customer: ");
+			double cashIn = kb.nextDouble();
 
-		if (price > cashIn) {
-			System.out.println("Error: Not enough cash to pay for this transaction.");
-		} else if (price == cashIn) {
-			System.out.println("This is the exact amount of cash to pay for this transaction.");
-		}
+			cashOut = cashIn - price;
+			cashOutInt = (int) (Math.round(cashOut * 100));
 
-		double cashOut = cashIn - price;
-		int cashOutInt = (int) (Math.round(cashOut * 100));
+			if (price > cashIn) {
+				System.out.println("Error: Not enough cash to pay for this transaction.");
+			} else if (price == cashIn) {
+				System.out.println("This is the exact amount of cash to pay for this transaction.");
+			} else {
+				ProperChange(cashOutInt);
+			}
+			System.out.println("Enter QUIT to stop or anything else to repeat: ");
+			quit = kb.next().toLowerCase();
+		} while (!quit.equals("quit"));
+
+		System.out.println("Thank you for using MakeChange. Have a great one!");
+
+		kb.close();
+	}
+
+	public static void ProperChange(int cashOutInt) {
+		String twentyStr = "", tenStr = "", fiveStr = "", onesStr = "";
+		String quarterStr = "", dimeStr = "", nickleStr = "", pennyStr = "";
+
 		if (cashOutInt >= 2000) {
 			int twentyCash = (int) (Math.floor(cashOutInt / 2000));
 			if (twentyCash > 1) {
@@ -33,14 +50,12 @@ public class MakeChangeApp {
 			cashOutInt = cashOutInt - 2000 * twentyCash;
 		}
 		if (cashOutInt >= 1000) {
-			int tensCash = (int) (Math.floor(cashOutInt / 1000));
-			tenStr = tensCash + " ten dollar bill, ";
-			cashOutInt = cashOutInt - 1000 * tensCash;
+			tenStr = "1 ten dollar bill, ";
+			cashOutInt = cashOutInt - 1000;
 		}
 		if (cashOutInt >= 500) {
-			int fivesCash = (int) (Math.floor(cashOutInt / 500));
-			fiveStr = fivesCash + " five dollar bill, ";
-			cashOutInt = cashOutInt - 500 * fivesCash;
+			fiveStr = "1 five dollar bill, ";
+			cashOutInt = cashOutInt - 500;
 		}
 		if (cashOutInt >= 100) {
 			int onesCash = (int) (Math.floor(cashOutInt / 100));
@@ -70,9 +85,8 @@ public class MakeChangeApp {
 			cashOutInt = cashOutInt - 10 * dimesCash;
 		}
 		if (cashOutInt >= 5) {
-			int nicklesCash = (int) (Math.floor(cashOutInt / 5));
-			nickleStr = nicklesCash + " nickle, ";
-			cashOutInt = cashOutInt - 5 * nicklesCash;
+			nickleStr = "1 nickle, ";
+			cashOutInt = cashOutInt - 5;
 		}
 		if (cashOutInt > 1) {
 			pennyStr = "and " + cashOutInt + " pennies. ";
@@ -81,8 +95,5 @@ public class MakeChangeApp {
 		}
 
 		System.out.println(twentyStr + tenStr + fiveStr + onesStr + quarterStr + dimeStr + nickleStr + pennyStr);
-
-		kb.close();
 	}
-
 }
